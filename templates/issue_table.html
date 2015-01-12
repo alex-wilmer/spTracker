@@ -1,0 +1,28 @@
+<h1>Issue Tracker</h1>
+<a class="btn btn-primary" ng-click="tracker.setTemplate('issue_form.html')">New Issue</a>
+<br>
+<div ng-controller="issueTableCtrl as issueTable">
+	<table class="table">
+	  <thead>
+	    <tr>
+	      <td>Id</td>
+	      <td>Title</td>
+	      <td>Assigned To</td>
+	      <td>Status</td>
+	      <td>Priority</td>
+	      <td>Modified</td>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr ng-repeat="issue in issueTable.issues" ng-click="tracker.currentIssue=issue;tracker.setTemplate('issue_details.html')"
+	      ng-class="{danger:issue.Category.type=='Bug',success:issue.Category.type=='Change',info:issue.Category.type=='Requirement'}">
+	      <td>{{issue.Id}}</td>
+	      <td>{{issue.Title}}</td>
+	      <td>{{issue.Assigned.Title}}</td>
+	      <td>{{issue.Status}}</td>
+	      <td>{{issue.Priority}}</td>	     
+	      <td>{{issue.Modified | date:"h:mm a - dd/MM/yyyy"}}</td> 	      	      	      
+	    </tr>
+	  </tbody>
+	</table>
+</div>

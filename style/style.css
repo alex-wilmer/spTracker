@@ -1,0 +1,30 @@
+/* SP Fixes (shouldn't be in the final app) */
+#siteIcon,
+#s4-titlerow,
+.ms-breadcrumb-top { display: none !important; }
+
+#contentBox { margin: 0; }
+#contentRow { padding-top: 0; }
+
+/* Utility */
+.p0-30 { padding: 0 30px; }
+
+a { cursor: pointer; }
+
+/* Form */
+input,
+label,
+select,
+textarea { display: block; }
+
+.btn,
+input,
+label,
+textarea { margin-top: 10px; }
+
+textarea { height: 200px; width: 100%; max-width: 800px; }
+
+.required { color: red; }
+
+tr { cursor: pointer; }
+

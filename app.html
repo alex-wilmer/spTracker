@@ -1,0 +1,17 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="/sp-tracker/app/style/style.css" rel="stylesheet" type="text/css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.8/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.12.0/ui-bootstrap-tpls.js"></script>
+<script>window.log = function(a) { console.log(a) };angular.module('spTrackerApp', ['ui.bootstrap']);</script>
+
+<div ng-app="spTrackerApp" ng-controller="spTrackerCtrl as tracker">
+  <div class="p0-30">
+ 	  <div ng-include="tracker.template"></div>
+  </div>
+</div>
+
+<script src="http://halton.qa/sp-tracker/app/controllers/sp_tracker_ctrl.js"></script>
+<script src="http://halton.qa/sp-tracker/app/controllers/issue_form_ctrl.js"></script>
+<script src="http://halton.qa/sp-tracker/app/controllers/issue_table_ctrl.js"></script>
+<script src="http://halton.qa/sp-tracker/app/controllers/issue_details_ctrl.js"></script>
+

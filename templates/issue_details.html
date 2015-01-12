@@ -1,0 +1,7 @@
+<h1>Issue Details</h1>
+<div ng-controller="issueDetailsCtrl as issueDetails">
+	<div class="btn btn-danger" ng-click="tracker.setTemplate('issue_table.html')">Back</div>
+	<div ng-if="issueDetails.ownsIssue()"class="btn btn-warning" ng-click="tracker.setTemplate('issue_table.html')">Edit</div>
+	<h3>{{tracker.currentIssue.Title}}</h3>
+	<p>{{tracker.currentIssue.Description}}</p>
+</div>

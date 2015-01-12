@@ -1,0 +1,34 @@
+<div ng-controller="issueFormCtrl as issueForm">
+	<h1>New Issue</h1>
+	<label>Category: <span class="required">*</span></label>
+	<select ng-model="issueForm.newIssue.category" ng-options="category.type for category in tracker.categories">
+	  <option value=''>- Category -</option>
+	</select>
+	<div ng-hide="issueForm.newIssue.category.type=='Requirement'">
+		<div ng-show="issueForm.newIssue.category">
+			<label>Type: <span class="required">*</span></label>
+			<select ng-model="issueForm.newIssue.category.subType" ng-options="subtype for subtype in issueForm.newIssue.category.subTypes">
+			  <option value=''>- Type: -</option>
+			</select>
+		</div>
+	</div>
+	<label>Title: <span class="required">*</span></label>
+	<input ng-model="issueForm.newIssue.title" placeholder="Issue Title..">
+	<label>Description: <span class="required">*</span></label>
+	<textarea ng-model="issueForm.newIssue.description" placeholder="Description.."></textarea>
+	<label>Priority:</label>
+	<select ng-model="issueForm.newIssue.priority" ng-options="priority for priority in tracker.priorities">
+	  <option value=''>- Priority -</option>
+	</select>
+	<label>Assign To:</label>
+	<input ng-model="issueForm.newIssue.assignedTo" placeholder="People Picker.." 
+	  typeahead="user as user.Title for user in issueForm.getUsers($viewValue)">
+	<label>Estimated Completion Date:</label>
+	<input ng-model="issueForm.newIssue.estimatedDate" placeholder="Date Picker..">
+	<label>Deadline Date:</label>
+	<input ng-model="issueForm.newIssue.deadlineDate" placeholder="Date Picker..">
+	<label>Attachments:</label>
+	<input id="file" ng-model="issueForm.newIssue.attachment" type="file">
+	<a class="btn btn-danger" ng-click="tracker.setTemplate('issue_table.html')">Cancel</a>
+	<a class="btn btn-success" ng-click="issueForm.issueInsert();">Submit</a>
+</div>
